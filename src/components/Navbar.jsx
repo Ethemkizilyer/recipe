@@ -3,16 +3,17 @@ import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
+import { useDisplayIngredients } from "../hooks/ingredientBasket.hook"
 
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// logo
-import ForkifyLogo from "../assets/img/forkify.logo";
 import {
   faMagnifyingGlass,
   faShoppingBasket,
 } from "@fortawesome/free-solid-svg-icons";
+
+// logo
+import ForkifyLogo from "../assets/img/forkify.logo";
 
 const Navbar = styled.header`
   display: grid;
@@ -32,7 +33,9 @@ const Nav = styled.div`
   width: 75%;
 `;
 
-
+export const UndecoratedLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const NavbarLogo = styled.div`
   display: flex;
@@ -79,17 +82,17 @@ const NavTextOption = styled(Link)`
   position: relative;
 `;
 
-const NavBar = () => {
-  // const { basket } = useDisplayIngredients();
+const ForkifyNavBar = () => {
+  const { basket } = useDisplayIngredients();
   return (
     <Navbar>
       <Nav>
-        <Link style={{ textDecoration: "none" }} to="/">
+        <UndecoratedLink to="/">
           <NavbarLogo>
             <ForkifyLogo />
             <NavTextLogo>BakarYE</NavTextLogo>
           </NavbarLogo>
-        </Link>
+        </UndecoratedLink>
         <NavbarOptions>
           <NavTextOption to="/search">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -97,7 +100,7 @@ const NavBar = () => {
           </NavTextOption>
           <NavTextOption to="/basket">
             <FontAwesomeIcon icon={faShoppingBasket} />
-            Basket {`(${5})`}
+            Basket {`(${basket.length})`}
           </NavTextOption>
         </NavbarOptions>
       </Nav>
@@ -105,4 +108,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default ForkifyNavBar;
