@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
 
-import { UndecoratedLink } from "./Navbar";
-import { Link, useNavigate } from "react-router-dom";
+import { UndecoratedLink } from "./NavBar";
 
 const BreadCrumbContainer = styled.div`
   display: flex;
@@ -28,20 +27,16 @@ const Breadcrmb = styled.div`
   width: 85%;
 `;
 
-const BreadCrumb = () => {
-    
+const BreadCrumb = ({ path, onClick = null }) => {
   return (
-    <Link
-      style={{ textDecoration: "none" }}
-      to={-1}
-    >
+    <UndecoratedLink to={path} onClick={onClick}>
       <BreadCrumbContainer>
         <Breadcrmb>
           <FontAwesomeIcon icon={faAnglesLeft} />
           Back
         </Breadcrmb>
       </BreadCrumbContainer>
-    </Link>
+    </UndecoratedLink>
   );
 };
 

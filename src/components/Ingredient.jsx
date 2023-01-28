@@ -43,8 +43,7 @@ const Ingredient = ({ quantity, unit, description }) => {
   return (
     <IngredientContainer>
       <Ing>
-        <IngContentContainer>
-        </IngContentContainer>
+
 
         <IngContentContainer>
           <IngText>{unit ? unit : "x"}</IngText>

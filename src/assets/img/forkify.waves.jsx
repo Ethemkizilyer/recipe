@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ForkifyWave1 = () => {
+export const Wave1 = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
@@ -12,7 +12,7 @@ export const ForkifyWave1 = () => {
   );
 };
 
-export const ForkifyWave2 = () => {
+export const Wave2 = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
