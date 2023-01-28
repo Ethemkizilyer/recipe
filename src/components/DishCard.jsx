@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { UndecoratedLink } from "./Navbar";
+import { UndecoratedLink } from "./NavBar";
 
 const DishCardContainer = styled.div`
   display: flex;

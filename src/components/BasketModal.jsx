@@ -8,9 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import Ingredient from "./Ingredient";
-import { Link, useNavigate } from "react-router-dom";
 
-
+import { UndecoratedLink } from "./NavBar";
 
 const BasketModalContainer = styled.section`
   display: flex;
@@ -29,7 +28,7 @@ const BasketModalContainer = styled.section`
   left: 0;
 `;
 
-const BasketModale = styled.div`
+const BasketModal = styled.div`
   width: 50%;
   animation: pop 300ms linear;
 
@@ -182,42 +181,46 @@ const RemoveDish = styled.button`
   }
 `;
 
-const BasketModalComponent = () => {
-    const navigate=useNavigate()
-    const onClick=()=>{
-        navigate(-1)
-    }
+const BasketModalComponent = ({
+  dishName,
+  author,
+  ingredients,
+  source,
+  onClick,
+}) => {
   return (
     <BasketModalContainer>
-      <BasketModale>
+      <BasketModal>
         <BasketCardContainer>
-          <Link to="/basket">
+          <UndecoratedLink to="/basket">
             <ExitModal>
               <FontAwesomeIcon icon={faX} />
             </ExitModal>
-          </Link>
+          </UndecoratedLink>
           <BasketHeader>
-            ASD
+            {dishName} by {author}
           </BasketHeader>
           <BasketTextContent>
             <BasketText>
               <h4>Ingredients</h4>
             </BasketText>
             <BasketText>
-              {/* <a href={source} rel="noopener noreferrer" target="_blank">
+              <a href={source} rel="noopener noreferrer" target="_blank">
                 Learn How to Cook it
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a> */}
+              </a>
             </BasketText>
           </BasketTextContent>
           <BasketCard>
             <BasketIngredientContainer>
-           
+              {ingredients.map((ingredient) => (
+                <Ingredient {...ingredient} />
+              ))}
             </BasketIngredientContainer>
             <RemoveDish onClick={onClick}>Remove Recipe</RemoveDish>
           </BasketCard>
         </BasketCardContainer>
-      </BasketModale>
+      </BasketModal>
     </BasketModalContainer>
   );
 };

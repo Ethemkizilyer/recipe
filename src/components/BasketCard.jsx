@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGroup, faClock } from "@fortawesome/free-solid-svg-icons";
 
-import { Link } from "react-router-dom";
+import { UndecoratedLink } from "./NavBar";
 
 const BasketCardContainer = styled.section`
   width: 100%;
@@ -78,25 +78,37 @@ const Colorize = styled.span`
   color: var(--primary-color);
 `;
 
-const BasketCardComponent = ({}) => {
+const BasketCardComponent = ({
+  id,
+  title,
+  author,
+  image_url,
+  servings,
+  cooking_time,
+  onClick,
+}) => {
   return (
-    <Link style={{ textDecoration: "none" }} to={`/basket/1`}>
-      <BasketCardContainer className="basket-card-container">
+    <UndecoratedLink to={`/basket/${id}`} onClick={onClick}>
+      <BasketCardContainer className="basket-card-container" id={id}>
         <BasketCard>
-          <BasketCardImg />
+          <BasketCardImg src={image_url} />
           <BasketCardContent>
+            <BasketHeadingContainer>
+              <BasketCardHeading title={title}>{title}</BasketCardHeading>
+              <BasketCardSubHeading>{author}</BasketCardSubHeading>
+            </BasketHeadingContainer>
             <BasketTextContainer>
               <BasketCardText>
                 <Colorize>
                   <FontAwesomeIcon icon={faUserGroup} />
                 </Colorize>{" "}
-                3 Servings
+                {servings} Servings
               </BasketCardText>
               <BasketCardText>
                 <Colorize>
                   <FontAwesomeIcon icon={faClock} />
                 </Colorize>{" "}
-                60 Minutes
+                {cooking_time} Minutes
               </BasketCardText>
             </BasketTextContainer>
             <BasketCardText cta={true}>
@@ -105,7 +117,7 @@ const BasketCardComponent = ({}) => {
           </BasketCardContent>
         </BasketCard>
       </BasketCardContainer>
-    </Link>
+    </UndecoratedLink>
   );
 };
 

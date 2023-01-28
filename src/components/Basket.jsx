@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 import BasketModalComponent from "./BasketModal";
 import BasketCardComponent from "./BasketCard";
-import PinnedRecipeComponent from "./RecipeCard";
+import PinnedRecipeComponent from "./Pinned";
+
+import { useShowModal } from "../hooks/selectedFromBasket.hook";
 
 const BasketContainer = styled.section`
   display: flex;
@@ -40,7 +42,7 @@ const BasketContentGrid = styled.div`
   gap: 16px;
 `;
 
-const Baskete = styled.div`
+const Basket = styled.div`
   width: 100%;
   margin: 30px 0 15px 0;
   border-bottom: 1px solid var(--primary-color);
@@ -63,28 +65,34 @@ const BasketMessage = styled.h4`
   font-family: "Raleway", sans-serif;
 `;
 
-const BasketComponent = () => {
+const BasketComponent = ({ basket, pinned }) => {
+  const { selectedDish, remove_recipe } = useShowModal();
+
   return (
     <>
       {" "}
       <BasketContainer>
-        {1 !== 0 && (
+        {pinned.length !== 0 && (
           <BasketContent>
-            <Baskete>
-              <BasketHeader>Pinned Recipes</BasketHeader>
-            </Baskete>
+            <Basket>
+              <BasketHeader>Favourites</BasketHeader>
+            </Basket>
             <BasketContentFlex>
-              
+              {pinned.map((recipes) => (
+                <PinnedRecipeComponent {...recipes} />
+              ))}
             </BasketContentFlex>
           </BasketContent>
         )}
         <BasketContent>
-          <Baskete>
+          <Basket>
             <BasketHeader>Basket</BasketHeader>
-          </Baskete>
-          {1 !== 0 ? (
+          </Basket>
+          {basket.length !== 0 ? (
             <BasketContentGrid>
-              
+              {basket.map(({ recipe_id, card }) => (
+                <BasketCardComponent id={recipe_id} {...card} />
+              ))}
             </BasketContentGrid>
           ) : (
             <BasketMessageContainer>
@@ -96,7 +104,12 @@ const BasketComponent = () => {
           )}
         </BasketContent>
       </BasketContainer>
-      <BasketModalComponent />
+      {selectedDish?.selected_dish !== undefined && (
+        <BasketModalComponent
+          onClick={remove_recipe}
+          {...selectedDish.selected_dish.modal}
+        />
+      )}
     </>
   );
 };
