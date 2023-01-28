@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+
+import BreadCrumb from "../components/Bread";
+import BasketComponent from "../components/Basket";
 
 const Basket = () => {
   return (
-    <div>Basket</div>
-  )
-}
+    <>
+      <BreadCrumb />
+      <BasketComponent />
+    </>
+  );
+};
 
-export default Basket
+export default Basket;
