@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import DishCard from "../components/DishCard";
-// import RecipeCard from "../../app/components/recipe-card.component";
 
 const SearchResultContainer = styled.section`
   display: flex;
@@ -20,7 +19,7 @@ const CenterDiv = styled.div`
   width: 85%;
 `;
 
-const SearchResult = styled.section`
+const SearchResul = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 285px);
 
@@ -30,7 +29,7 @@ const SearchResult = styled.section`
   overflow: hidden;
 `;
 
-const ForkifySearchResult = ({ searchedRecipes }) => {
+const SearchResult = ({ searchedRecipes }) => {
   const dishJSX = searchedRecipes.map((recipe) => (
     <DishCard
       id={recipe.id}
@@ -42,10 +41,10 @@ const ForkifySearchResult = ({ searchedRecipes }) => {
   return (
     <SearchResultContainer>
       <CenterDiv>
-        <SearchResult>{dishJSX}</SearchResult>
+        <SearchResul>{dishJSX}</SearchResul>
       </CenterDiv>
     </SearchResultContainer>
   );
 };
 
-export default ForkifySearchResult;
+export default SearchResult;

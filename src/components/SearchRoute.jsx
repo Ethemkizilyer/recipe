@@ -1,17 +1,17 @@
 import React from "react";
 
 import { useFoodSearch } from "../hooks/searchedFoodRecipes.hook";
-import ForkifySearchBar from "../features/search-recipes/SearchedFood";
-import ForkifySearchResult from "./SearchResult"
+import SearchBar from "../features/search-recipes/SearchedFood";
+import SearchResult from "../page";
 
 const SearchRoute = () => {
   const { searchedRecipes } = useFoodSearch();
   console.log(searchedRecipes);
   return (
     <>
-      <ForkifySearchBar />
+      <SearchBar />
       {searchedRecipes.length !== 0 && (
-        <ForkifySearchResult searchedRecipes={searchedRecipes} />
+        <SearchResult searchedRecipes={searchedRecipes} />
       )}
     </>
   );
