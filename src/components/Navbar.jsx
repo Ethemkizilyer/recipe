@@ -32,9 +32,7 @@ const Nav = styled.div`
   width: 75%;
 `;
 
-export const UndecoratedLink = styled(Link)`
-  text-decoration: none;
-`;
+
 
 const NavbarLogo = styled.div`
   display: flex;
@@ -86,12 +84,12 @@ const NavBar = () => {
   return (
     <Navbar>
       <Nav>
-        <UndecoratedLink to="/">
+        <Link style={{ textDecoration: "none" }} to="/">
           <NavbarLogo>
             <ForkifyLogo />
             <NavTextLogo>BakarYE</NavTextLogo>
           </NavbarLogo>
-        </UndecoratedLink>
+        </Link>
         <NavbarOptions>
           <NavTextOption to="/search">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
