@@ -1,11 +1,11 @@
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-import HeroComponent from "../components/Hero";
-import FeaturesComponent from "../components/Features";
-import FeatureHighlightsComponent from "../components/Highlights";
-import CallToActionComponent from "../components/Cta";
-import Footer from "../components/Footer";
+import HeroComponent from "../components/HomeHero";
+import FeaturesComponent from "../components/HomeFeatures";
+import FeatureHighlightsComponent from "../components/HomeHigh";
+import CallToActionComponent from "../components/HomeCta";
+import Footer from "../components/Footere";
 
 const Home = () => {
   const navigate = useNavigate();
