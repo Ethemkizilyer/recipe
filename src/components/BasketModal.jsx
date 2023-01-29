@@ -9,7 +9,7 @@ import {
 
 import Ingredient from "./Ingredient";
 
-import { UndecoratedLink } from "./NavBar";
+import { UndecoratedLink } from "./NavBa";
 import { Link, NavLink } from "react-router-dom";
 
 const BasketModalContainer = styled.section`

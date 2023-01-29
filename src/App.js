@@ -1,17 +1,13 @@
-
-
-
-import { Route, Routes } from 'react-router-dom';
-import Home from './page/Home';
-import SearchRoute from './page/SearchRoute';
-import SelectedRecipeRoute from './page/SelectedRecipeRoute';
-import Basket from './page/Basket';
-import NavBar from './components/NavBar';
+import { Route, Routes } from "react-router-dom";
+import Home from "./page/Home";
+import SearchRoute from "./page/SearchRoute";
+import SelectedRecipeRoute from "./page/SelectedRecipeRoute";
+import Basket from "./page/Basket";
+import NavBar from "./components/NavBa";
 
 function App() {
   return (
     <>
-      
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />

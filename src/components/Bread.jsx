@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
 
-import { UndecoratedLink } from "./NavBar";
+import { UndecoratedLink } from "./NavBa";
 
 const BreadCrumbContainer = styled.div`
   display: flex;
