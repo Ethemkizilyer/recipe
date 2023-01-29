@@ -15,4 +15,5 @@ BasketModal.args = {
     return { quantity: 1, unit: "cup", description: "oat meal" };
   }),
   source: "google.com",
+  linkTo: "/basket",
 };

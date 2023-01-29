@@ -161,7 +161,7 @@ const RecipeCard = ({
                   <Colorize>
                     <FontAwesomeIcon icon={faCheck} />
                   </Colorize>
-                
+                  {quantity} {unit} {description}
                 </RecipeTextContent>
               ))}
             </RecipeContentGrid>

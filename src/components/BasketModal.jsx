@@ -193,11 +193,11 @@ const BasketModalComponent = ({
     <BasketModalContainer>
       <BasketModal>
         <BasketCardContainer>
-          {/* <Link to="/basket">
+          <a role={Link} href="/basket">
             <ExitModal>
               <FontAwesomeIcon icon={faX} />
             </ExitModal>
-          </Link> */}
+          </a>
           <BasketHeader>
             {dishName} by {author}
           </BasketHeader>
