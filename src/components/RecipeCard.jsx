@@ -8,7 +8,7 @@ import {
   faClock,
 } from "@fortawesome/free-solid-svg-icons";
 
-import HowToComponent from "./RCard";
+import HowToComponent from "./Rcard";
 
 
 
