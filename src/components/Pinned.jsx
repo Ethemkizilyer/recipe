@@ -15,16 +15,28 @@ const PinnedRecipeImg = styled.img`
   width: var(--size);
   height: var(--size);
 
+  &.small {
+    --size: 50px;
+  }
+
+  &.medium {
+    --size: 100px;
+  }
+
+  &.large {
+    --size: 150px;
+  }
+
   border-radius: 50%;
   border: 4px solid var(--primary-color);
 
   cursor: pointer;
 `;
 
-const PinnedRecipeComponent = ({ title, image_url }) => {
+const PinnedRecipeComponent = ({ title, image_url, size }) => {
   return (
     <PinnedRecipeContainer>
-      <PinnedRecipeImg title={title} src={image_url} />
+      <PinnedRecipeImg className={size} title={title} src={image_url} />
     </PinnedRecipeContainer>
   );
 };

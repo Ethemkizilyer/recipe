@@ -10,6 +10,7 @@ import {
 import Ingredient from "./Ingredient";
 
 import { UndecoratedLink } from "./NavBar";
+import { Link, NavLink } from "react-router-dom";
 
 const BasketModalContainer = styled.section`
   display: flex;
@@ -192,11 +193,11 @@ const BasketModalComponent = ({
     <BasketModalContainer>
       <BasketModal>
         <BasketCardContainer>
-          <UndecoratedLink to="/basket">
+          {/* <Link to="/basket">
             <ExitModal>
               <FontAwesomeIcon icon={faX} />
             </ExitModal>
-          </UndecoratedLink>
+          </Link> */}
           <BasketHeader>
             {dishName} by {author}
           </BasketHeader>
@@ -205,10 +206,10 @@ const BasketModalComponent = ({
               <h4>Ingredients</h4>
             </BasketText>
             <BasketText>
-              <a href={source} rel="noopener noreferrer" target="_blank">
+              {/* <NavLink to={source} rel="noopener noreferrer" target="_blank">
                 Learn How to Cook it
                 <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </a>
+              </NavLink> */}
             </BasketText>
           </BasketTextContent>
           <BasketCard>

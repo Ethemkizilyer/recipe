@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import Navbar from './components/NavBar';
 import { Route, Routes } from 'react-router-dom';
 import Home from './page/Home';
@@ -9,8 +9,9 @@ import Basket from './page/Basket';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <>
+      
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search">
@@ -22,7 +23,7 @@ function App() {
           <Route path=":basket_id" element={<Basket />} />
         </Route>
       </Routes>
-    </div>
+    </>
   );
 }
 

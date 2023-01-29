@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { UndecoratedLink } from "./NavBar";
@@ -68,7 +69,10 @@ const DishAuthor = styled.p`
 
 const DishCard = ({ id, author, title, IMG_URL }) => {
   return (
-    <UndecoratedLink to={`/search/${id}`}>
+    <a
+      style={{ textDecoration: "none", color: "#148d79" }}
+      href={`/search/${id}`}
+    >
       <DishCardContainer key={id} id={id}>
         <DishImg src={IMG_URL} />
         <DishContent>
@@ -76,7 +80,7 @@ const DishCard = ({ id, author, title, IMG_URL }) => {
           <DishAuthor>{author}</DishAuthor>
         </DishContent>
       </DishCardContainer>
-    </UndecoratedLink>
+    </a>
   );
 };
 

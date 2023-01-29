@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGroup, faClock } from "@fortawesome/free-solid-svg-icons";
 
 import { UndecoratedLink } from "./NavBar";
+import { LinkTo } from "@storybook/addon-links";
 
 const BasketCardContainer = styled.section`
   width: 100%;
@@ -88,7 +89,7 @@ const BasketCardComponent = ({
   onClick,
 }) => {
   return (
-    <UndecoratedLink to={`/basket/${id}`} onClick={onClick}>
+    <a style={{textDecoration:"none",color:"#456213"}} href={`/basket/${id}`} onClick={onClick}>
       <BasketCardContainer className="basket-card-container" id={id}>
         <BasketCard>
           <BasketCardImg src={image_url} />
@@ -117,7 +118,7 @@ const BasketCardComponent = ({
           </BasketCardContent>
         </BasketCard>
       </BasketCardContainer>
-    </UndecoratedLink>
+    </a>
   );
 };
 
