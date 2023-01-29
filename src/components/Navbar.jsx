@@ -13,9 +13,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 // logo
-import ForkifyLogo from "../assets/img/forkify.logo";
+import Logo from "../assets/img/forkify.logo";
 
-const Navbar = styled.header`
+const Navbara = styled.header`
   display: grid;
   place-items: center;
   width: 100%;
@@ -82,14 +82,14 @@ const NavTextOption = styled(Link)`
   position: relative;
 `;
 
-const ForkifyNavBar = () => {
+const NavBar = () => {
   const { basket } = useDisplayIngredients();
   return (
-    <Navbar>
+    <Navbara>
       <Nav>
         <UndecoratedLink to="/">
           <NavbarLogo>
-            <ForkifyLogo />
+            <Logo />
             <NavTextLogo>BakarYE</NavTextLogo>
           </NavbarLogo>
         </UndecoratedLink>
@@ -104,8 +104,8 @@ const ForkifyNavBar = () => {
           </NavTextOption>
         </NavbarOptions>
       </Nav>
-    </Navbar>
+    </Navbara>
   );
 };
 
-export default ForkifyNavBar;
+export default NavBar;
